@@ -1,0 +1,18 @@
+
+<div class="banner">
+  <h2>¡Ofertas especiales!</h2>
+  <div class="carousel">
+    <div *ngFor="let item of items; let i = index" 
+         class="item-card" [ngClass]="{ 'active': i === currentIndex }">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ item.title }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="item.image" alt="item Image">
+        <mat-card-content>
+          <p>{{ '$' + item.price }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

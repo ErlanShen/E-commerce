@@ -1,0 +1,26 @@
+.example-spacer {
+          flex: 1 1 auto;
+}
+
+.title {
+          margin: auto;
+          text-align: center;
+}
+
+.mat-toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  margin-right: 20px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+button.mat-button {
+  font-size: 1rem;
+}

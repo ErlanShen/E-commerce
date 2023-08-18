@@ -1,0 +1,41 @@
+<!-- <app-banner></app-banner>
+ -->
+<div class="home">
+  <div class="items">
+    <mat-card
+      class="card"
+      *ngFor="
+        let item of items.slice(
+          pageIndex * pageSize,
+          (pageIndex + 1) * pageSize
+        )
+      "
+    >
+      <mat-card-header>
+        <div mat-card-avatar class="header-image"></div>
+        <mat-card-title class="">{{ item.category }}</mat-card-title>
+        <mat-card-subtitle>{{ item.title }}</mat-card-subtitle>
+      </mat-card-header>
+      <img class="img" mat-card-image src="{{ item.image }}" alt="" />
+      <div class="product-content">
+        <mat-card-content>
+          <h2>{{ "$" + item.price }}</h2>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ver detalles</button>
+        </mat-card-actions>
+      </div>
+    </mat-card>
+  </div>
+
+  <mat-paginator
+    [length]="totalProducts"
+    [pageSize]="pageSize"
+    (page)="onPageChange($event)"
+    [disabled]="disabled"
+    [showFirstLastButtons]="showFirstLastButtons"
+    [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+    [hidePageSize]="hidePageSize"
+    [pageIndex]="pageIndex"
+  ></mat-paginator>
+</div>
