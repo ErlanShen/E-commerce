@@ -1,18 +1,22 @@
-
 <div class="banner">
-  <h2>¡Ofertas especiales!</h2>
-  <div class="carousel">
-    <div *ngFor="let item of items; let i = index" 
-         class="item-card" [ngClass]="{ 'active': i === currentIndex }">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>{{ item.title }}</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image [src]="item.image" alt="item Image">
+   <img src="https://cdn.icon-icons.com/icons2/1456/PNG/512/mbrishoppingcart_99558.png" alt=""/>
+  <h1>¡Ofertas especiales!</h1>
+  <div class="items">
+    <mat-card class="card" *ngFor="let item of items">
+      <mat-card-header>
+        <mat-card-title class="">{{ item.title }}</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+
+      <img class="image" mat-card-image src="{{ item.image }}" alt="" />
+      <div class="product-content">
         <mat-card-content>
-          <p>{{ '$' + item.price }}</p>
+          <h2>{{ "$" + item.price }}</h2>
         </mat-card-content>
-      </mat-card>
-    </div>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ver detalles</button>
+        </mat-card-actions>
+      </div>
+    </mat-card>
   </div>
 </div>

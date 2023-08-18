@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidenav {
+  padding: 1rem;
+  width: auto;
+  margin: auto;
+  button {
+    margin: 1rem 0rem;
+    padding: auto 1rem;
+    display: flex;
+    width: 100% ;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.title {
+  margin: auto;
+  text-align: center;
+}
+
+.mat-toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  margin-right: 20px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+button.mat-button {
+  font-size: 1rem;
+}

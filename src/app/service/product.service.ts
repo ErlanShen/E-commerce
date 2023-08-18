@@ -6,13 +6,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  private FakeStoreAPI = 'https://fakestoreapi.com/products';
+  private allProducts = 'https://fakestoreapi.com/products';
+  private randomProduct = 'https://fakestoreapi.com/products?sort=desc';
 
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<any[]> {
-    return this.http.get<any[]>(this.FakeStoreAPI);
+    return this.http.get<any[]>(this.allProducts);
   }
 
-  
+  randomProducts(): Observable<any[]>{
+    return this.http.get<any[]>(this.randomProduct)
+  }
+
+  showFiller = false; 
+
 }
