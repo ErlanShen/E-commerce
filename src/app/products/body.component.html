@@ -8,23 +8,26 @@
 
 <div class="home">
   <div class="items">
-    <mat-card class="card" *ngFor="let item of items">
-      
-      <img class="img" mat-card-image src="{{ item.image }}" alt="" />
-<mat-card-header>
-        <div mat-card-avatar class="header-image"></div>
-        <!-- <mat-card-title class="">{{ item.category }}</mat-card-title> -->
-        <mat-card-subtitle>{{ item.title }}</mat-card-subtitle>
-      </mat-card-header>
-      <div class="product-content" fxLayout="row" fxLayoutAlign="center center">
-
-        <mat-card-content>
-          <h2>{{ "$" + item.price }}</h2>
-          <span class="spacer"></span>
-          <!-- <button mat-raised-button color="secundary">Buy now!</button> -->
-        </mat-card-content>
-
-      </div>
-    </mat-card>
+    <a *ngFor="let item of items" [routerLink]="['/product-details', item.id]">
+      <mat-card class="card">
+        <img class="img" mat-card-image src="{{ item.image }}" alt="" />
+        <mat-card-header>
+          <div mat-card-avatar class="header-image"></div>
+          <!-- <mat-card-title class="">{{ item.category }}</mat-card-title> -->
+          <mat-card-subtitle>{{ item.title }}</mat-card-subtitle>
+        </mat-card-header>
+        <div
+          class="product-content"
+          fxLayout="row"
+          fxLayoutAlign="center center"
+        >
+          <mat-card-content>
+            <h2>{{ "$" + item.price }}</h2>
+            <span class="spacer"></span>
+            <!-- <button mat-raised-button color="secundary">Buy now!</button> -->
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </a>
   </div>
 </div>

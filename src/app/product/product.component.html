@@ -1,1 +1,25 @@
-<p>product works!</p>
+<!-- product-details -->
+<!-- <div class="product-details">
+  <mat-card class="card">
+    <mat-card-header>
+      <img class="image" mat-card-image src="{{ selectedItem }}" alt="" />
+    </mat-card-header>
+    <div class="product-content">
+      <mat-card-content>
+        <mat-card-subtitle>{{ selectedItem }}</mat-card-subtitle>
+        <h2>{{ "$" + selectedItem }}</h2>
+        <p>{{ selectedItem }}</p>
+      </mat-card-content>
+    </div>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="addToCart(selectedItem)">Agregar al carrito</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+ -->
+ <div *ngIf="selectedItem" class="product-details">
+  <h2>{{ selectedItem.title }}</h2>
+  <p>{{ selectedItem.description }}</p>
+  <p>Precio: {{ "$" + selectedItem.price }}</p>
+  <button (click)="addToCart(selectedItem)">Agregar al carrito</button>
+</div>

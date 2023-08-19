@@ -12,12 +12,16 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'home',
+    component: BannerComponent,
+  },
+  {
     path: 'products',
     component: BodyComponent,
   },
   {
-    path: 'home',
-    component: BannerComponent,
+    path: 'product/:id',
+    component: ProductComponent,
   },
   {
     path: '**',

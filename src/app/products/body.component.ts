@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Products } from '../model/product';
-import { HttpClient } from '@angular/common/http';
-import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-body',
@@ -11,16 +9,7 @@ import { PageEvent } from '@angular/material/paginator';
 export class BodyComponent implements OnInit {
   items: Products[] = [];
 
-  pageIndex = 0;
-  pageSize = 10;
-  pageSizeOptions = [5, 10, 25];
-  totalProducts = this.items.length;
-  hidePageSize = false;
-  showPageSizeOptions = true;
-  showFirstLastButtons = true;
-  disabled = false;
-
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.fetchItems();
@@ -35,9 +24,5 @@ export class BodyComponent implements OnInit {
       .catch(error => {
         console.error('Error:', error);
       });
-  }
-  onPageChange(event: PageEvent): void {
-    this.pageIndex = event.pageIndex;
-    this.pageSize = event.pageSize;
   }
 }
