@@ -6,11 +6,6 @@ import { Products } from './model/product';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'E-commerce';
-  items: any[] = [];
+  title = 'Ecommerce';
 }
 
-/* fetch('https://fakestoreapi.com/products?limit=5')
-  .then((res) => res.json())
-  .then((json) => console.log(json));
- */

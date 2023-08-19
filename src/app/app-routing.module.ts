@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BannerComponent } from './banner/banner.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { BodyComponent } from './products/body.component';
-import { ProductComponent } from './product/product.component';
+import { SingleProductComponent } from './single-product/single-product.component';
 
 const routes: Routes = [
   {
@@ -20,8 +19,8 @@ const routes: Routes = [
     component: BodyComponent,
   },
   {
-    path: 'product/:id',
-    component: ProductComponent,
+    path: 'single-product/:id',
+    component: SingleProductComponent,
   },
   {
     path: '**',

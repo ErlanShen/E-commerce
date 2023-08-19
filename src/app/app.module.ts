@@ -18,9 +18,9 @@ import { BannerComponent } from './banner/banner.component';
 import { BodyComponent } from './products/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { ProductComponent } from './product/product.component';
+import { SingleProductComponent } from './single-product/single-product.component';
 @NgModule({
-  declarations: [AppComponent, BannerComponent, BodyComponent, FooterComponent, SidebarComponent, ProductComponent],
+  declarations: [AppComponent, BannerComponent, BodyComponent, FooterComponent, SidebarComponent, SingleProductComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

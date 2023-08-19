@@ -1,0 +1,33 @@
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .product-card {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .product-details {
+    display: flex;
+
+    .product-image {
+      flex: 1;
+      padding: 1rem;
+    }
+
+    .product-info {
+      flex: 2;
+      padding: 1rem;
+
+      h2 {
+        margin-top: 0;
+      }
+
+      button {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

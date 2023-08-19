@@ -1,15 +1,7 @@
 .app-container {
-          background-image: url("https://img.freepik.com/foto-gratis/tablero-madera-mesa-vacia-fondo-borroso_1253-1560.jpg?w=740&t=st=1692399081~exp=1692399681~hmac=4486e377732cf4e0716a2044d959e874e82ba7a636b0dcaf369ec91a368d0074") !important;
-          background-size: cover; /* Estirar y ajustar la imagen */
-          background-repeat: no-repeat; /* Evitar la repetición */
-          background-attachment: fixed; /* Fijar la imagen de fondo */
+  background-image: url("https://img.freepik.com/foto-gratis/tablero-madera-mesa-vacia-fondo-borroso_1253-1560.jpg?w=740&t=st=1692399081~exp=1692399681~hmac=4486e377732cf4e0716a2044d959e874e82ba7a636b0dcaf369ec91a368d0074") !important;
+  background-size: cover; /* Estirar y ajustar la imagen */
+  background-repeat: no-repeat; /* Evitar la repetición */
+  background-attachment: fixed; /* Fijar la imagen de fondo */
 }
 
-@keyframes offerAnimation {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
