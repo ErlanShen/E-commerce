@@ -2,21 +2,26 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BannerComponent } from './banner/banner.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { BodyComponent } from './products/body.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'inicio',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
-  /* {
-    path: 'inicio',
-    component: SidebarComponent,
-
-  }, */
+  {
+    path: 'products',
+    component: BodyComponent,
+  },
+  {
+    path: 'home',
+    component: BannerComponent,
+  },
   {
     path: '**',
-    redirectTo: 'inicio'
+    redirectTo: 'home'
   }
 ];
 

@@ -15,11 +15,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 /* Components generated */
 import { BannerComponent } from './banner/banner.component';
-import { BodyComponent } from './body/body.component';
+import { BodyComponent } from './products/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ProductComponent } from './product/product.component';
 @NgModule({
-  declarations: [AppComponent, BannerComponent, BodyComponent, FooterComponent, SidebarComponent],
+  declarations: [AppComponent, BannerComponent, BodyComponent, FooterComponent, SidebarComponent, ProductComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

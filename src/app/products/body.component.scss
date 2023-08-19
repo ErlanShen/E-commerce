@@ -1,3 +1,23 @@
+.banner {
+  padding: 0.5rem;
+  text-align: center;
+
+  img {
+    height: auto;
+    width: 5%;
+    margin: 1rem 1rem;
+    object-fit: contain;
+    justify-items: center;
+  }
+
+  h1 {
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+}
+
+
 .home {
   text-align: center;
   padding: 1rem 0.5rem;
@@ -10,9 +30,6 @@
     flex-wrap: wrap !important;
     gap: 1rem;
 
-    h2 {
-      text-align: right !important;
-    }
     
     .header-image {
       background-image: url("https://cdn.icon-icons.com/icons2/1456/PNG/512/mbrishoppingcart_99558.png");
@@ -27,6 +44,7 @@
     align-items: center;
     box-shadow: 0px 2px 6px rgba(6, 6, 6, 0.580);
     transition: transform 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.7);
 
     &:hover {
       transform: scale(1.05);
@@ -40,10 +58,7 @@
       align-items: center;
       justify-items: center;
     }
-    .mat-card-title {
-      font-size: 1.5vw;
-      margin-bottom: 1rem;
-    }
+   
 
     .product-content {
       display: flex;
@@ -52,13 +67,6 @@
       padding: 10px;
       flex-grow: 1;
     }
-    .mat-card-content {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      max-height: 8vh; 
-      font-size: 1.2vw;
-      align-items: end;
-    }
+
   }
 }

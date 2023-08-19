@@ -1,22 +1,21 @@
 <div class="banner">
-   <img src="https://cdn.icon-icons.com/icons2/1456/PNG/512/mbrishoppingcart_99558.png" alt=""/>
-  <h1>¡Ofertas especiales!</h1>
-  <div class="items">
-    <mat-card class="card" *ngFor="let item of items">
-      <mat-card-header>
-        <mat-card-title class="">{{ item.title }}</mat-card-title>
-        <mat-card-subtitle></mat-card-subtitle>
-      </mat-card-header>
+  <img
+    src="https://cdn.icon-icons.com/icons2/1456/PNG/512/mbrishoppingcart_99558.png"
+    alt=""
+  />
+  <h1>¡Special Deals!</h1>
+</div>
 
-      <img class="image" mat-card-image src="{{ item.image }}" alt="" />
-      <div class="product-content">
-        <mat-card-content>
-          <h2>{{ "$" + item.price }}</h2>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="primary">Ver detalles</button>
-        </mat-card-actions>
-      </div>
-    </mat-card>
-  </div>
+<div class="cards">
+  <mat-card *ngFor="let item of items" class="card">
+    <mat-card-header>
+     <img class="image" mat-card-image src="{{ item.image }}" alt="" />
+    </mat-card-header>
+    <div class="product-content">
+      <mat-card-content>
+         <mat-card-subtitle>{{ item.title }}</mat-card-subtitle>
+        <h2>{{ "$" + item.price }}</h2>
+      </mat-card-content>
+    </div>
+  </mat-card>
 </div>

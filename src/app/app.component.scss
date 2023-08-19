@@ -1,8 +1,6 @@
 .app-container {
-          background-size: contain;
-          background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fsp.depositphotos.com%2Fstock-photos%2Ffondo-de-tienda.html&psig=AOvVaw1kkdTzdlOs0D2fPjDesVvo&ust=1692407579143000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCOCGptaD5YADFQAAAAAdAAAAABAE");
-          background-repeat: no-repeat;
-          background: fixed;
-          background-color: rgba(108, 235, 235, 0.293);
-          font-family: Roboto, "Helvetica Neue", sans-serif;
+          background-image: url("https://img.freepik.com/foto-gratis/tablero-madera-mesa-vacia-fondo-borroso_1253-1560.jpg?w=740&t=st=1692399081~exp=1692399681~hmac=4486e377732cf4e0716a2044d959e874e82ba7a636b0dcaf369ec91a368d0074") !important;
+          background-size: cover; /* Estirar y ajustar la imagen */
+          background-repeat: no-repeat; /* Evitar la repetición */
+          background-attachment: fixed; /* Fijar la imagen de fondo */
 }
