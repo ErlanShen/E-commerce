@@ -1,69 +1,87 @@
 .container {
-  margin: 1rem 1rem 1rem 1rem;
-  height: 100vh;
+  padding: 1.5rem 1.5rem;
 }
 .product-card {
   display: flex;
+  flex-direction: column;
   border: 1px solid #ccc;
-  padding: 1.5rem;
+  padding: 1rem;
   background-color: rgba(245, 245, 245, 0.766);
   @media (max-width: 768px) {
     flex-direction: column;
   }
+  .product-title {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    margin: 0;
+    font-size: x-large;
+  }
 }
-
-.product-image {
-  flex: 1 1 65%;
-  max-width: 75%;
+.content {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-
+  flex-direction: row;
   @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .product-image {
+    flex: 1 1 60%;
     max-width: 100%;
-    height: auto;
-    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      flex-direction: column;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+      padding-right: 0.5rem;
+    }
   }
 
-  img {
-    width: 75%;
-    height: auto;
-    max-height: 75%;
-    object-fit: contain;
+  .product-details {
+    flex: 1 1 35%;
+    padding-left: 0.5rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    p {
+      font-size: large;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    h3 {
+      font-size: x-large;
+      padding-right: 1rem;
+      padding-bottom: 0.5rem;
+    }
+    h4 {
+      font-size: large;
+      color: #626262;
+      padding-left: 1rem;
+      padding-top: 2rem;
+    }
+    .price {
+      text-align: end;
+      font-weight: bolder;
+      align-items: end;
+    }
+
+    @media (max-width: 768px) {
+      padding: 1rem 0;
+    }
   }
 }
 
-.product-details {
-  flex: 1 1 35%;
-  padding-left: 0.1rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  p {
-    font-size: x-large;
-    margin-top: 20px;
-    line-height: 1.5;
-  }
-  h3{
-    font-size: x-large;
-    padding-right: 1rem;
-    padding-bottom: 0.5rem;
-  }
-  h4{
-    font-size: large;
-    color: #626262;
-    padding-left: 1rem;
-    padding-bottom: 0.5rem;
-  }
-  .price {
-    text-align: end;
-    font-weight: bolder;
-    align-items: end;
-  }
-
-  @media (max-width: 768px) {
-    padding: 1rem 0;
-  }
-}
 .quantity-button {
   display: flex;
   align-items: center;
@@ -86,6 +104,8 @@
     align-items: center;
   }
 }
-mat-grid-tile {
-  background: lightblue;
+
+.snackbar-error {
+  background-color: red;
+  color: white;
 }

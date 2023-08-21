@@ -21,11 +21,11 @@ export class SingleProductComponent implements OnInit {
   }
 
   constructor(
-    private router: ActivatedRoute, 
-    private snackBar: MatSnackBar, 
+    private router: ActivatedRoute,
+    private snackBar: MatSnackBar,
     private Service: ProductService,
-    private RouterLink : Router
-    ) { }
+    private RouterLink: Router
+  ) { }
 
   fetchItems(productId: string) {
     fetch(`https://fakestoreapi.com/products/${productId}`)
@@ -37,16 +37,25 @@ export class SingleProductComponent implements OnInit {
       });
   }
 
-  addToCart(item: any) {
+  addToCart(item: Products) {
+    if (item.quantity === undefined || item.quantity === 0) {
+      this.snackBar.open('Please enter a valid quantity', 'Close', {
+        duration: 3000,
+        panelClass: 'snackbar-error',
+        verticalPosition : 'top',
+        horizontalPosition : 'center'
+      });
+      return;
+    }
     this.isAddingToCart = true;
     this.Service.addToCart(item);
-    this.showSnackBar('Item added to cart'); 
+    this.showSnackBar('Item added to cart');
     setTimeout(() => {
       this.RouterLink.navigate(['/products'])
       this.isAddingToCart = false;
     }, 2000)
   }
-  
+
   private showSnackBar(message: string) {
     this.snackBar.open(message, 'Close', {
       duration: 3000

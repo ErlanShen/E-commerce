@@ -1,27 +1,48 @@
 # ECommerce
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+El proyecto es una tienda virtual desarrollada utilizando Angular y Angular Material. La tienda virtual permite a los usuarios ver una lista de productos, ver detalles de productos individuales, agregar productos al carrito de compras y proceder al proceso de pago. Para el backend se Utilizo al siguinte API `https://fakestoreapi.com/`
 
+Características principales del proyecto:
+
+1.Vista de Lista de Productos: Los usuarios pueden ver una lista de productos disponibles en la tienda. Cada producto se muestra con su imagen, título, categoría y precio. Hay un botón "Agregar al Carrito" que permite agregar el producto seleccionado al carrito de compras.
+
+2.Vista de Detalle de Producto: Al hacer clic en un producto en la lista, los usuarios pueden ver los detalles completos del producto, incluida una descripción más detallada y la opción de seleccionar la cantidad deseada. También pueden agregar el producto al carrito desde esta vista.
+
+3.Carrito de Compras: El carrito de compras muestra los productos que el usuario ha agregado. Cada producto en el carrito se muestra con su imagen, título, precio y la cantidad seleccionada. Los usuarios pueden ajustar la cantidad o eliminar productos individualmente.
+
+4.Total del Carrito: En el carrito de compras, se muestra el total acumulado de los precios de los productos seleccionados.
+
+5.Proceso de Pago: Los usuarios pueden proceder al proceso de pago desde el carrito de compras. Al hacer clic en un botón "Proceder al Pago", se muestra un mensaje de confirmación indicando que la compra ha sido exitosa.
+
+El proyecto utiliza Angular Material para mantener un diseño y estilo coherentes siguiendo las pautas de Material Design. Además, se han implementado funcionalidades para agregar, actualizar y eliminar productos del carrito, así como para calcular el total del carrito.
+
+El objetivo del proyecto es proporcionar una experiencia de usuario intuitiva y fluida al interactuar con la tienda virtual, permitiendo a los usuarios navegar por los productos, agregar elementos al carrito y realizar un proceso de pago simulado.
+## Requisitos
+
+- Node.js: v18.16.1
+- Angular CLI: v 16.2.0.
+
+## Instalación
+
+1. Clonar el repositorio:
+
+```bash
+`https://github.com/ErlanShen/E-commerce.git`
+
+1.Navegar al directorio del proyecto:
+
+`cd nombre-del-proyecto`
+
+2.Instalar las dependencias:
+
+Run `npm install --save`
+
+##Uso
+Ejecutar el servidor de desarrollo:
+Run `ng serve`
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Versiones
+- Node.js: v18.16.1
+- Angular CLI: v 16.2.0.
+```

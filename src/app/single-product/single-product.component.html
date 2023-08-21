@@ -1,35 +1,36 @@
 <div class="container" *ngIf="item">
 
-
-  
   <div class="product-card">
-    <div class="product-image">
-      <img src="{{ item.image }}" alt="" />
-    </div>
-    <div class="product-details">
-      <h2>{{ item.title }}</h2>
-      <h4>Category: {{ item.category }}</h4>
-      <hr />
-      <p>Description: {{ item.description }}</p>
-      <hr>
-      <h3 class="price">Price: {{ "$ " + item.price }}</h3>
-      <div class="quantity-button">
-        <mat-form-field appearance="outline">
-          <mat-label>Quantity</mat-label>
-          <input matInput required placeholder="#" type="number" setValue="1" [min]="1"
-            [(ngModel)]="item.quantity">
-        </mat-form-field>
+    <h2 class="product-title">{{ item.title }}</h2>
+
+    <div class="content">
+      <div class="product-image">
+        <img src="{{ item.image }}" alt="" />
       </div>
-      <div class="add-to-cart-button">
-        <button mat-fab extended color="primary" (click)="addToCart(item)">
-          <i class="fa-solid fa-bag-shopping"></i>
-          Add to Cart
-        </button>
+      <div class="product-details">
+
+        <h4>Category: {{ item.category }}</h4>
+        <hr />
+        <p>Description: {{ item.description }}</p>
+        <hr>
+        <h3 class="price">Price: {{ "$ " + item.price }}</h3>
+        <div class="quantity-button">
+          <mat-form-field appearance="outline">
+            <mat-label>Quantity</mat-label>
+            <input matInput required placeholder="#" type="number" value="{{item.quantity}}" [(ngModel)]="item.quantity">
+          </mat-form-field>
+        </div>
+        <div class="add-to-cart-button">
+          <button mat-fab extended color="primary" (click)="addToCart(item)">
+            <i class="fa-solid fa-bag-shopping"></i>
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   </div>
   <span *ngIf="isAddingToCart"></span>
   <span *ngIf="!isAddingToCart"></span>
 
- 
+
 </div>
