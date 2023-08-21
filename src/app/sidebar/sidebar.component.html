@@ -5,28 +5,83 @@
   </button>
 
   <span class="spacer"></span>
+
   <h1 class="headerTitle">Ecommerce Store</h1>
+
   <span class="spacer"></span>
-  <button mat-icon-button="mat-icon-button">
-    <mat-icon>share</mat-icon>
+  <button type="button" mat-icon-button="mat-icon-button" (click)="sidenav.toggle()">
+    <mat-icon>shopping_cart</mat-icon>
   </button>
 </mat-toolbar>
 
-<!-- SIDEBAR -->
-<mat-drawer-container class="container" autosize>
-  <mat-drawer #drawer class="sidenav" mode="side">
-    <div class="buttons">
-      <button mat-raised-button routerLink="/inicio">
-      <mat-icon>home</mat-icon>
-      Home
-    </button>
-    <button mat-raised-button routerLink="/products">
-      <mat-icon>shopping_cart</mat-icon>
-      Products
-    </button>
+<!-- SIDEBAR LEFT -->
+<mat-drawer-container class="container" autosize (backdropClick)="close('backdrop')">
+  <mat-drawer #drawer class="sidenav" opened mode="side">
+    <mat-nav-list>
+      <h3>Menu</h3>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-raised-button routerLink="/inicio">
+          <mat-icon>home</mat-icon>
+          Home
+        </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-raised-button routerLink="/products">
+          <i class="fa-brands fa-product-hunt"></i>
+          Products
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <!-- SIDEBAR right CART-->
+  <mat-drawer #sidenav (keydown.escape)="close('escape')" position="end" mode="side">
+    <div class="cartItems">
+      <h3 class="title">Your Cart</h3>
+      <hr>
+
+      <div *ngFor="let item of cartItems">
+        <div class="product-sidebar">
+
+          <div class="product-image">
+            <img src="{{ item.image }}" alt="" />
+          </div>
+          <div class="product-details">
+            <div class="remove-button">
+              <span class="remove-icon" (click)="removeItem(item)">X</span>
+            </div>
+
+            <h3 class="product-title">{{ item.title }}</h3>
+
+            <p>{{ "$ " + item.price}}</p>
+
+            <mat-label>Quantity</mat-label>
+            <mat-form-field>
+              <input matInput type="number" min="1" [(ngModel)]="item.quantity" placeholder="Enter quantity" />
+            </mat-form-field>
+
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="footerSideBar">
+        <h2 class="total">Total: {{ totalCartPrice | currency: '$: ' }}</h2>
+        <button mat-raised-button color="primary" (click)="processPayment()">
+          Proceed to Payment
+        </button>
+      </div>
+
     </div>
   </mat-drawer>
-<!-- productos -->
+
+  <mat-sidenav>
+
+
+  </mat-sidenav>
+
+  <!-- Presentations routers pages -->
   <div class="sidenav-content">
     <router-outlet></router-outlet>
   </div>
