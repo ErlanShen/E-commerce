@@ -7,35 +7,40 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./body.component.scss'],
 })
 export class BodyComponent implements OnInit {
-  items: Products[] = [];
 
+  items: Products[] = [];
+  totalItems: number = 0
+  /* paginator */
   pageIndex = 0;
-  pageSize = 6;
-  pageSizeOptions = [6, 12, 25];
-  totalProducts = this.items.length;
+  pageSize = 5;
+  pageSizeOptions = [5, 10, 15, 20];
+  totalProducts = 20;
   hidePageSize = false;
   showPageSizeOptions = true;
-  showFirstLastButtons = true;
-  disabled = false;
+
+  onPageChange(event: PageEvent): void {
+    
+    this.pageSize = event.pageSize;
+    this.pageIndex = event.pageIndex;
+  }
+
 
   ngOnInit(): void {
     this.fetchItems();
+    
   }
 
   fetchItems() {
     fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
       .then(json => {
+        this.totalItems = json.length
         this.items = json;
+        /* const UniqueIds = new Set(this.item.map( item => item.id));
+        this.totalItems = UniqueIds.size; */
       })
       .catch(error => {
         console.error('Error:', error);
       });
   }
-
-  onPageChange(event: PageEvent): void {
-    this.pageIndex = event.pageIndex;
-    this.pageSize = event.pageSize;
-  }
-
 }

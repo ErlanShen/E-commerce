@@ -29,6 +29,9 @@ export class SidebarComponent implements OnInit {
   get totalCartPrice() {
     return this.Service.getTotalCartPrice();
   }
+  get updateTotalPrice(){
+    return this.Service.getUpdateTotalPrice();
+  }
 
   removeItem(item: Products) {
     this.Service.removeFromCart(item)

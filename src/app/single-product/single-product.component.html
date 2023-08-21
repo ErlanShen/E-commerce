@@ -1,5 +1,5 @@
 <div class="container" *ngIf="item">
-
+<mat-progress-bar mode="determinate" *ngIf="isAddingToCart"></mat-progress-bar>
   <div class="product-card">
     <h2 class="product-title">{{ item.title }}</h2>
 
@@ -17,7 +17,7 @@
         <div class="quantity-button">
           <mat-form-field appearance="outline">
             <mat-label>Quantity</mat-label>
-            <input matInput required placeholder="#" type="number" value="{{item.quantity}}" [(ngModel)]="item.quantity">
+            <input matInput required placeholder="Add quantity" type="number" [value]="item.quantity" min="1" [(ngModel)]="item.quantity">
           </mat-form-field>
         </div>
         <div class="add-to-cart-button">
@@ -29,6 +29,7 @@
       </div>
     </div>
   </div>
+ 
   <span *ngIf="isAddingToCart"></span>
   <span *ngIf="!isAddingToCart"></span>
 

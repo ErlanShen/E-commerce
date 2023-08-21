@@ -17,7 +17,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 /* Components generated */
 import { BannerComponent } from './banner/banner.component';
 import { BodyComponent } from './products/body.component';
@@ -50,7 +50,7 @@ import { SingleProductComponent } from './single-product/single-product.componen
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatGridListModule
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

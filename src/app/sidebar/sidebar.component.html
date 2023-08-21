@@ -54,7 +54,7 @@
             <h3 class="product-title">{{ item.title }}</h3>
             <p>{{ "$ " + item.price}}</p>
             <label for="quantity">Quantity:
-              <input type="number" id="quantity" name="quantity" value="{{item.quantity}}"/>
+              <input type="number" id="quantity" name="quantity" value="{{item.quantity}}" min="1" [(ngModel)]="item.quantity" (ngModelChange)="updateTotalPrice"/>
             </label>
           </div>
         </div>

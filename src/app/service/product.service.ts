@@ -48,6 +48,10 @@ export class ProductService {
     return this.totalCartPrice
   }
 
+  getUpdateTotalPrice() {
+    return this.calculateTotalCartPrice();
+  }
+
   removeFromCart(product: Products) {
     const removeProduct = this.cartItems.findIndex(item => item.id === product.id)
     if (removeProduct !== -1) {
@@ -61,11 +65,10 @@ export class ProductService {
   }
 
   resetTotalCartPrice() {
-    this.totalCartPrice = 0; // Update this based on how you manage the total price
+    this.totalCartPrice = 0;
   }
 
   processPayment() {
-    console.log('Payment processed');
     this.totalItemsInCart = 0;
     this.totalCartPrice = 0;
   }
