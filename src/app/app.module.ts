@@ -17,6 +17,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatGridListModule } from '@angular/material/grid-list';
 /* Components generated */
 import { BannerComponent } from './banner/banner.component';
 import { BodyComponent } from './products/body.component';
@@ -45,10 +46,11 @@ import { SingleProductComponent } from './single-product/single-product.componen
     MatPaginatorModule,
     MatSidenavModule,
     MatListModule,
-    MatSnackBarModule, 
+    MatSnackBarModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent],

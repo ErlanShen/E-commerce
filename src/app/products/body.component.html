@@ -1,36 +1,38 @@
-<div class="banner">
-  <img src="https://cdn.icon-icons.com/icons2/1456/PNG/512/mbrishoppingcart_99558.png" alt="" />
-  <h1>¡All Products!</h1>
-</div>
+<div class="contaienr">
+  <div class="banner">
+    <img src="https://cdn.icon-icons.com/icons2/1456/PNG/512/mbrishoppingcart_99558.png" alt="" />
+    <h1>¡All Products!</h1>
+  </div>
 
-<div class="home">
-  <div class="items">
-    <a *ngFor="let item of items.slice(
+  <div class="home">
+    <div class="items">
+      <a *ngFor="let item of items.slice(
           pageIndex * pageSize,
           (pageIndex + 1) * pageSize
         )" [routerLink]="['/single-product', item.id]">
-      <mat-card class="card">
-        <img class="img" mat-card-image src="{{ item.image }}" alt="" />
-        <mat-card-header>
-          <div mat-card-avatar class="header-image"></div>
-          <!-- <mat-card-title class="">{{ item.category }}</mat-card-title> -->
-          <mat-card-title>{{ item.title }}</mat-card-title>
-        </mat-card-header>
-        <div class="product-content" fxLayout="row" fxLayoutAlign="center center">
-          <mat-card-content>
-            <h2>{{ "$" + item.price }}</h2>
-            <span class="spacer"></span>
-            <!-- <button mat-raised-button color="secundary">Buy now!</button> -->
-          </mat-card-content>
-        </div>
-      </mat-card>
-    </a>
-  </div>
+        <mat-card class="card">
+          <img class="img" mat-card-image src="{{ item.image }}" alt="" />
+          <mat-card-header>
+            <div mat-card-avatar class="header-image"></div>
+            <!-- <mat-card-title class="">{{ item.category }}</mat-card-title> -->
+            <mat-card-title>{{ item.title }}</mat-card-title>
+          </mat-card-header>
+          <div class="product-content" fxLayout="row" fxLayoutAlign="center center">
+            <mat-card-content>
+              <h2>{{ "$" + item.price }}</h2>
+              <span class="spacer"></span>
+              <!-- <button mat-raised-button color="secundary">Buy now!</button> -->
+            </mat-card-content>
+          </div>
+        </mat-card>
+      </a>
+    </div>
 
-  <div class="banner">
-    <mat-paginator [length]="totalProducts" [pageSize]="pageSize" (page)="onPageChange($event)" [disabled]="disabled"
-      [showFirstLastButtons]="showFirstLastButtons" [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
-      [hidePageSize]="hidePageSize" [pageIndex]="pageIndex"></mat-paginator>
-  </div>
+    <div class="banner">
+      <mat-paginator [length]="totalProducts" [pageSize]="pageSize" (page)="onPageChange($event)" [disabled]="disabled"
+        [showFirstLastButtons]="showFirstLastButtons" [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+        [hidePageSize]="hidePageSize" [pageIndex]="pageIndex"></mat-paginator>
+    </div>
 
+  </div>
 </div>

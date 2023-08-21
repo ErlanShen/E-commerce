@@ -1,24 +1,35 @@
 <div class="container" *ngIf="item">
+
+
+  
   <div class="product-card">
     <div class="product-image">
       <img src="{{ item.image }}" alt="" />
     </div>
     <div class="product-details">
       <h2>{{ item.title }}</h2>
-      <p>Category: {{ item.category }}</p>
+      <h4>Category: {{ item.category }}</h4>
       <hr />
       <p>Description: {{ item.description }}</p>
       <hr>
-      <p class="price">Price: {{ "$ " + item.price }}</p>
-      <mat-form-field >
-        <mat-label>Quantity</mat-label>
-        <input matInput [value]="1" placeholder="Enter quantity" type="number" min="1" [(ngModel)]="item.quantity">
-      </mat-form-field>
-      <button class="button" mat-raised-button (click)="addToCart(item)">
-        Add to Cart
-      </button>
+      <h3 class="price">Price: {{ "$ " + item.price }}</h3>
+      <div class="quantity-button">
+        <mat-form-field appearance="outline">
+          <mat-label>Quantity</mat-label>
+          <input matInput required placeholder="#" type="number" setValue="1" [min]="1"
+            [(ngModel)]="item.quantity">
+        </mat-form-field>
+      </div>
+      <div class="add-to-cart-button">
+        <button mat-fab extended color="primary" (click)="addToCart(item)">
+          <i class="fa-solid fa-bag-shopping"></i>
+          Add to Cart
+        </button>
+      </div>
     </div>
   </div>
-  <span *ngIf="isAddingToCart">Adding...</span>
-  <span *ngIf="!isAddingToCart">Add to Cart</span>
+  <span *ngIf="isAddingToCart"></span>
+  <span *ngIf="!isAddingToCart"></span>
+
+ 
 </div>

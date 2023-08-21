@@ -41,10 +41,9 @@
     <div class="cartItems">
       <h3 class="title">Your Cart</h3>
       <hr>
-
-      <div *ngFor="let item of cartItems">
+      <ng-container *ngIf="cartItems.length > 0; else emptyCart">
+        <div *ngFor="let item of cartItems">
         <div class="product-sidebar">
-
           <div class="product-image">
             <img src="{{ item.image }}" alt="" />
           </div>
@@ -52,34 +51,27 @@
             <div class="remove-button">
               <span class="remove-icon" (click)="removeItem(item)">X</span>
             </div>
-
             <h3 class="product-title">{{ item.title }}</h3>
-
             <p>{{ "$ " + item.price}}</p>
-
-            <mat-label>Quantity</mat-label>
-            <mat-form-field>
-              <input matInput type="number" min="1" [(ngModel)]="item.quantity" placeholder="Enter quantity" />
-            </mat-form-field>
-
+            <label for="quantity">Quantity:
+              <input type="number" id="quantity" name="quantity" value="{{item.quantity}}"/>
+            </label>
           </div>
         </div>
       </div>
-      <hr>
       <div class="footerSideBar">
-        <h2 class="total">Total: {{ totalCartPrice | currency: '$: ' }}</h2>
-        <button mat-raised-button color="primary" (click)="processPayment()">
-          Proceed to Payment
-        </button>
+          <h2 class="total">Total: {{ totalCartPrice | currency: '$: ' }}</h2>
+          <button mat-fab extended color="primary" (click)="processPayment()">
+            <i class="fa-regular fa-credit-card"></i>
+            Proceed to Payment
+          </button>
       </div>
-
+      </ng-container>
+      <ng-template #emptyCart>
+        <h4>Your cart is empty.</h4>
+      </ng-template>
     </div>
   </mat-drawer>
-
-  <mat-sidenav>
-
-
-  </mat-sidenav>
 
   <!-- Presentations routers pages -->
   <div class="sidenav-content">

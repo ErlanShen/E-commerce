@@ -39,12 +39,12 @@ export class SingleProductComponent implements OnInit {
 
   addToCart(item: any) {
     this.isAddingToCart = true;
+    this.Service.addToCart(item);
+    this.showSnackBar('Item added to cart'); 
     setTimeout(() => {
-      this.Service.addToCart(item);
-      this.showSnackBar('Item added to cart'); 
       this.RouterLink.navigate(['/products'])
       this.isAddingToCart = false;
-    }, 5000)
+    }, 2000)
   }
   
   private showSnackBar(message: string) {
@@ -57,7 +57,7 @@ export class SingleProductComponent implements OnInit {
     const inputValue = event.target.value;
     const numericValue = parseInt(inputValue, 10);
 
-    if (isNaN(numericValue) || numericValue < 1) {
+    if (isNaN(numericValue) || numericValue <= 1) {
       this.item.quantity = 1;
     } else {
       this.item.quantity = numericValue;

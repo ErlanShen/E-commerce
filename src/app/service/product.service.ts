@@ -56,10 +56,16 @@ export class ProductService {
       this.totalItemsInCart--;
     }
   }
+  resetCart() {
+    this.cartItems = [];
+  }
+
+  resetTotalCartPrice() {
+    this.totalCartPrice = 0; // Update this based on how you manage the total price
+  }
 
   processPayment() {
     console.log('Payment processed');
-    this.cartItems = [];
     this.totalItemsInCart = 0;
     this.totalCartPrice = 0;
   }
